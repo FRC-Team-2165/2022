@@ -7,9 +7,25 @@ IntakeSubsystem::IntakeSubsystem() {
 
 void IntakeSubsystem::extend() {
     intakeSolenoid.Set(frc::DoubleSolenoid::Value::kForward);
-    state = true;
+
 }
-void IntakeSubsystem::extend() {
+void IntakeSubsystem::retract() {
     intakeSolenoid.Set(frc::DoubleSolenoid::Value::kReverse);
-    state = false;
+  
+}
+
+void IntakeSubsystem::toggle() {
+    intakeSolenoid.Toggle();
+}
+
+void IntakeSubsystem::startMotor() {
+    intakeMotor.Set(0.6);
+}
+
+void IntakeSubsystem::stopMotor() {
+    intakeMotor.Set(0);
+}
+
+void IntakeSubsystem::reverseMotor() {
+    intakeMotor.Set(-0.6);
 }

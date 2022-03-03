@@ -12,12 +12,13 @@ class IntakeSubsystem : public frc2::SubsystemBase {
     void retract();
     void toggle();
 
-    void setspeed();
+    void startMotor();
+    void stopMotor();
+    void reverseMotor();
 
-    bool position();
 
 private:
     frc::DoubleSolenoid intakeSolenoid{frc::PneumaticsModuleType::CTREPCM, 0, 1};
     ctre::phoenix::motorcontrol::can::WPI_TalonSRX intakeMotor{0};
-    bool state;
+    
 };
