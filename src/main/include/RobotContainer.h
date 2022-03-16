@@ -8,6 +8,8 @@
 
 #include <frc2/command/Command.h>
 
+#include "commands/AutonomousCommand.h"
+
 #include "subsystems/ClimberSubsystem.h"
 #include "subsystems/DriveSubsytem.h"
 #include "subsystems/IntakeSubsystem.h"
@@ -25,6 +27,8 @@ class RobotContainer {
 public:
   RobotContainer();
 
+  frc2::Command* GetAutonomousCommand();
+
 private:
   // The robot's subsystems and commands are defined here...
 
@@ -35,4 +39,6 @@ private:
   TransportSubsystem transportSubsystem{frc::DriverStation::GetAlliance()};
 
   void ConfigureButtonBindings();
+
+  AutonomousCommand autoCommand;
 };

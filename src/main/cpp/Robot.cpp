@@ -35,13 +35,19 @@ void Robot::DisabledPeriodic() {}
  * RobotContainer} class.
  */
 void Robot::AutonomousInit() {
-
+  autocmd = m_container.GetAutonomousCommand();
+  if(autocmd != nullptr) {
+    autocmd->Schedule(false);
+  }
 }
 
 void Robot::AutonomousPeriodic() {}
 
 void Robot::TeleopInit() {
-
+  if(autocmd != nullptr) {
+    autocmd->Cancel();
+    autocmd = nullptr;
+  }
 }
 
 /**

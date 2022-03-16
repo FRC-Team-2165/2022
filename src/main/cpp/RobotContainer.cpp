@@ -15,3 +15,6 @@ void RobotContainer::ConfigureButtonBindings() {
   // Configure your button bindings here
 }
 
+frc2::Command* RobotContainer::GetAutonomousCommand() {
+  return &autoCommand;
+}
