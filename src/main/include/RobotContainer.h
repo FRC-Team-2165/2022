@@ -4,7 +4,15 @@
 
 #pragma once
 
+#include <frc/DriverStation.h>
+
 #include <frc2/command/Command.h>
+
+#include "subsystems/ClimberSubsystem.h"
+#include "subsystems/DriveSubsytem.h"
+#include "subsystems/IntakeSubsystem.h"
+#include "subsystems/ShooterSubsystem.h"
+#include "subsystems/TransportSubsystem.h"
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -19,6 +27,12 @@ public:
 
 private:
   // The robot's subsystems and commands are defined here...
+
+  ClimberSubsystem climberSubsystem;
+  DriveSubsystem driveSubsystem;
+  IntakeSubsystem intakeSubsystem;
+  ShooterSubsystem shooterSubsystem;
+  TransportSubsystem transportSubsystem{frc::DriverStation::GetAlliance()};
 
   void ConfigureButtonBindings();
 };
